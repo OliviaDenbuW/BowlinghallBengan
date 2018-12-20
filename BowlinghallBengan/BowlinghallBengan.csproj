@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bowling\BowlingAlley.cs" />
     <Compile Include="Bowling\Competition.cs" />
     <Compile Include="Bowling\CurrentFee.cs" />
     <Compile Include="Bowling\CurrentFeeList.cs" />
@@ -50,6 +51,7 @@
     <Compile Include="Bowling\Game.cs" />
     <Compile Include="Bowling\GameSerie.cs" />
     <Compile Include="Bowling\Member.cs" />
+    <Compile Include="Bowling\Membership.cs" />
     <Compile Include="Bowling\Transaction.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

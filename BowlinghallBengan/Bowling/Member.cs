@@ -22,6 +22,11 @@ namespace BowlinghallBengan.Bowling
             AttendedCompetitions = new List<Competition>();
         }
 
+        public void CreateMembership()
+        {
+            
+        }
+
         public void AddMembership()
         {
             Transaction currentTransaction = new Transaction();
