@@ -8,7 +8,7 @@ namespace BowlinghallBengan.Bowling
 {
     class CurrentFee
     {
-        public FeeType TypeOfFee { get; set; }
+        public FeeType FeeType { get; set; }
         public decimal Amount { get; set; }
     }
 }

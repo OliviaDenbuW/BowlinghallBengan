@@ -9,6 +9,7 @@ namespace BowlinghallBengan.Bowling
     enum FeeType
     {
         //Lägger bara in alla olika typer av feeTypes det finns
+        StartFee,
         MemberFee,
         CompetitionFee,
         GameFee

@@ -9,11 +9,9 @@ namespace BowlinghallBengan.Bowling
     //SINGELTON PATTERN
     class BowlingAlley
     {
-        private static BowlingAlley instance = null;
+        private static BowlingAlley _instance = null;
 
         private string Name { get; set; }
-
-        private List<Membership> AllMemberships { get; set; }
 
         private BowlingAlley()
         {
@@ -24,11 +22,11 @@ namespace BowlinghallBengan.Bowling
         {
             get
             {
-                if (instance == null)
+                if (_instance == null)
                 {
-                    instance = new BowlingAlley();
+                    _instance = new BowlingAlley();
                 }
-                return instance;
+                return _instance;
             }
         }
 
@@ -48,6 +46,7 @@ namespace BowlinghallBengan.Bowling
         {
             string message = "Välkommen " + newMember + ", du är nu medlem på " + this.Name;
             Console.WriteLine(message);
+            Console.WriteLine();
         }
     }
 }

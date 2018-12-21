@@ -9,16 +9,28 @@ namespace BowlinghallBengan.Bowling
     class Member : Person
     {
         public Membership Membership { get; set; }
+        public bool HasPaidMembership { get; set; }
         public List<Transaction> Transactions { get; set; }
         public List<Competition> AttendedCompetitions { get; set; }
 
         public Member(string name, string streetAddress, Membership newMembership) : base(name, streetAddress)
         {
-            //Name = name;
-            //StreetAddress = streetAddress;
             Membership = newMembership;
             Transactions = new List<Transaction>();
             AttendedCompetitions = new List<Competition>();
+        }
+
+        public Transaction MakeTransaction(FeeType currentType)
+        {
+            Transaction transaction = new Transaction()
+            {
+                TimeStamp = DateTime.Now,
+                TypeOfFee = FeeType.MemberFee,
+                Amount = CurrentFeeList.Instance.GetPriceForFeeType(FeeType.MemberFee),
+                IsPayed = true
+            };
+
+            return transaction;
         }
 
         public void AddMembership()

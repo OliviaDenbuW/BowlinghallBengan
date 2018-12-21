@@ -16,12 +16,5 @@ namespace BowlinghallBengan.Bowling
             this.MemberNo = memberNo;
             this.StartDate = startDate;
         }
-
-        //private List<Membership> GetAllMemberships()
-        //{
-        //    List<Membership> allMemberships = BowlingAlley.Instance.GetAllMemberships();
-
-        //    return allMemberships;
-        //}
     }
 }
