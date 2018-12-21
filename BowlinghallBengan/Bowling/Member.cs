@@ -12,12 +12,10 @@ namespace BowlinghallBengan.Bowling
         public List<Transaction> Transactions { get; set; }
         public List<Competition> AttendedCompetitions { get; set; }
 
-        public Member(string firstName, string lastName, string streetAddress, string postalCode, Membership newMembership)
+        public Member(string name, string streetAddress, Membership newMembership) : base(name, streetAddress)
         {
-            FirstName = firstName;
-            LastName = lastName;
-            StreetAddress = streetAddress;
-            PostalCode = postalCode;
+            //Name = name;
+            //StreetAddress = streetAddress;
             Membership = newMembership;
             Transactions = new List<Transaction>();
             AttendedCompetitions = new List<Competition>();

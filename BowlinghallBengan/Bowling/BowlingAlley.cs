@@ -32,15 +32,22 @@ namespace BowlinghallBengan.Bowling
             }
         }
 
-        public void Welcome(string newMember)
+        public Visitor CreateVisitor(string name, string streetAddress, bool wantsMembership)
         {
-            string message = "Välkommen " + newMember + " till " + this.Name;
-            Console.WriteLine(message);
+            Visitor currentVisitor = new Visitor(name, streetAddress);
+
+            if (wantsMembership)
+            {
+                currentVisitor.WantsMembership = true;
+            }
+
+            return currentVisitor;
         }
 
-        public List<Membership> GetAllMemberships()
+        public void Confirmation(string newMember)
         {
-            return AllMemberships;
+            string message = "Välkommen " + newMember + ", du är nu medlem på " + this.Name;
+            Console.WriteLine(message);
         }
     }
 }

@@ -11,18 +11,16 @@ namespace BowlinghallBengan
     {
         static void Main(string[] args)
         {
-            Visitor visitor = new Visitor()
+            for (int i = 0; i < 11; i++)
             {
-                FirstName = "Olivia",
-                LastName = "Denbu",
-                StreetAddress = "Rudsjövägen 51",
-                PostalCode = "131 47"
-            };
+                Visitor currentVisitor = BowlingAlley.Instance.CreateVisitor("TestMember" + (i+1), "TestAddress" + (i+1), true);
 
-            Member newMember = visitor.BecomeMember(visitor);
-
-            
-            BowlingAlley.Instance.Welcome(newMember.FirstName);
+                if (currentVisitor.WantsMembership)
+                {
+                    Member newMember = currentVisitor.BecomeMember(currentVisitor);
+                    BowlingAlley.Instance.Confirmation(newMember.Name);
+                }
+            }
 
             Console.ReadLine();
         }

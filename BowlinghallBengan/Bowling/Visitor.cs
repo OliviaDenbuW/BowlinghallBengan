@@ -8,16 +8,21 @@ namespace BowlinghallBengan.Bowling
 {
     class Visitor : Person
     {
+        public bool WantsMembership { get; set; }
+
+        public Visitor(string name, string streetAddress) : base(name, streetAddress)
+        {
+
+        }
+
         public Member BecomeMember(Visitor currentVisitor)
         {
-            string firstName = currentVisitor.FirstName;
-            string lastName = currentVisitor.LastName;
+            string name = currentVisitor.Name;
             string streetAddress = currentVisitor.StreetAddress;
-            string postalCode = currentVisitor.PostalCode;
 
             Membership newMembership = new Membership(1, DateTime.Today);
 
-            Member newMember = new Member(firstName, lastName, streetAddress, postalCode, newMembership);
+            Member newMember = new Member(name, streetAddress, newMembership);
 
             return newMember;
         }
