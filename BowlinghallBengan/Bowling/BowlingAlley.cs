@@ -6,10 +6,14 @@ using System.Threading.Tasks;
 
 namespace BowlinghallBengan.Bowling
 {
+    //SINGELTON PATTERN
     class BowlingAlley
     {
         private static BowlingAlley instance = null;
+
         private string Name { get; set; }
+
+        private List<Membership> AllMemberships { get; set; }
 
         private BowlingAlley()
         {
@@ -32,6 +36,11 @@ namespace BowlinghallBengan.Bowling
         {
             string message = "Välkommen " + newMember + " till " + this.Name;
             Console.WriteLine(message);
+        }
+
+        public List<Membership> GetAllMemberships()
+        {
+            return AllMemberships;
         }
     }
 }

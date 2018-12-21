@@ -11,7 +11,19 @@ namespace BowlinghallBengan
     {
         static void Main(string[] args)
         {
-            BowlingAlley.Instance.Welcome("Olivia");
+            Visitor visitor = new Visitor()
+            {
+                FirstName = "Olivia",
+                LastName = "Denbu",
+                StreetAddress = "Rudsjövägen 51",
+                PostalCode = "131 47"
+            };
+
+            Member newMember = visitor.BecomeMember(visitor);
+
+            
+            BowlingAlley.Instance.Welcome(newMember.FirstName);
+
             Console.ReadLine();
         }
     }

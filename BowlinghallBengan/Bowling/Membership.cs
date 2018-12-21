@@ -8,13 +8,20 @@ namespace BowlinghallBengan.Bowling
 {
     class Membership
     {
-        public Member CurrentMember { get; set; }
+        public int MemberNo { get; set; }
         public DateTime StartDate { get; set; }
 
-        public Membership(Member currentMember, DateTime startDate)
+        public Membership(int memberNo, DateTime startDate)
         {
-            this.CurrentMember = currentMember;
+            this.MemberNo = memberNo;
             this.StartDate = startDate;
         }
+
+        //private List<Membership> GetAllMemberships()
+        //{
+        //    List<Membership> allMemberships = BowlingAlley.Instance.GetAllMemberships();
+
+        //    return allMemberships;
+        //}
     }
 }

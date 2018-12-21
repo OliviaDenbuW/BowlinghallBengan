@@ -6,25 +6,21 @@ using System.Threading.Tasks;
 
 namespace BowlinghallBengan.Bowling
 {
-    class Member
+    class Member : Person
     {
-        public int MemberNr { get; set; }
-        public string Name { get; set; }
-        public string StreetAddress { get; set; }
-        public string PostalCode { get; set; }
-        public DateTime StartDateMembership { get; set; }
+        public Membership Membership { get; set; }
         public List<Transaction> Transactions { get; set; }
         public List<Competition> AttendedCompetitions { get; set; }
 
-        public Member()
+        public Member(string firstName, string lastName, string streetAddress, string postalCode, Membership newMembership)
         {
+            FirstName = firstName;
+            LastName = lastName;
+            StreetAddress = streetAddress;
+            PostalCode = postalCode;
+            Membership = newMembership;
             Transactions = new List<Transaction>();
             AttendedCompetitions = new List<Competition>();
-        }
-
-        public void CreateMembership()
-        {
-            
         }
 
         public void AddMembership()

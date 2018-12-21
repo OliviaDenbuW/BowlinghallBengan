@@ -52,7 +52,9 @@
     <Compile Include="Bowling\GameSerie.cs" />
     <Compile Include="Bowling\Member.cs" />
     <Compile Include="Bowling\Membership.cs" />
+    <Compile Include="Bowling\Person.cs" />
     <Compile Include="Bowling\Transaction.cs" />
+    <Compile Include="Bowling\Visitor.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
