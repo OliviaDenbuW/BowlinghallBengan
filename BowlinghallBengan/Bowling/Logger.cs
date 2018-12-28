@@ -6,12 +6,11 @@ using System.Threading.Tasks;
 
 namespace BowlinghallBengan.Bowling
 {
-    enum FeeType
+    class Logger
     {
-        //Lägger bara in alla olika typer av feeTypes det finns
-        StartFee,
-        MemberFee,
-        CupFee,
-        GameFee
+        public string PrintMessage(string message)
+        {
+            return message;
+        }
     }
 }

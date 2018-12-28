@@ -29,7 +29,7 @@ namespace BowlinghallBengan.Bowling
 
             _allFeeTypes.Add(new CurrentFee { FeeType = FeeType.StartFee, Amount = 1200 });
             _allFeeTypes.Add(new CurrentFee { FeeType = FeeType.MemberFee, Amount = 200 });
-            _allFeeTypes.Add(new CurrentFee { FeeType = FeeType.CompetitionFee, Amount = 100 });
+            _allFeeTypes.Add(new CurrentFee { FeeType = FeeType.CupFee, Amount = 100 });
         }
 
         public decimal GetPriceForFeeType(FeeType currentType)

@@ -44,14 +44,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bowling\BowlingAlley.cs" />
-    <Compile Include="Bowling\Competition.cs" />
+    <Compile Include="Bowling\Cup.cs" />
+    <Compile Include="Bowling\CupFactory.cs" />
     <Compile Include="Bowling\CurrentFee.cs" />
     <Compile Include="Bowling\CurrentFeeList.cs" />
+    <Compile Include="Bowling\Admin.cs" />
     <Compile Include="Bowling\FeeType.cs" />
     <Compile Include="Bowling\Game.cs" />
     <Compile Include="Bowling\GameSerie.cs" />
+    <Compile Include="Bowling\Logger.cs" />
     <Compile Include="Bowling\Member.cs" />
     <Compile Include="Bowling\Membership.cs" />
+    <Compile Include="Bowling\Parcipitant.cs" />
     <Compile Include="Bowling\Person.cs" />
     <Compile Include="Bowling\Transaction.cs" />
     <Compile Include="Bowling\Visitor.cs" />

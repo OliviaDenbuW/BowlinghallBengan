@@ -44,7 +44,7 @@ namespace BowlinghallBengan.Bowling
 
         public void Confirmation(string newMember)
         {
-            string message = "Välkommen " + newMember + ", du är nu medlem på " + this.Name;
+            string message = "Välkommen, du är nu medlem på " + this.Name;
             Console.WriteLine(message);
             Console.WriteLine();
         }

@@ -6,18 +6,27 @@ using System.Threading.Tasks;
 
 namespace BowlinghallBengan.Bowling
 {
-    class Competition
+    class Cup
     {
-        public Competition()
+        public Cup(string name, DateTime startDate, DateTime endDate)
         {
             PlayedGames = new List<Game>();
-            Parcipitants = new List<Member>();
+            Parcipitants = new List<Parcipitant>();
         }
         public string Name { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
         public List<Game> PlayedGames { get; set; }
-        public List<Member> Parcipitants { get; set; }
+        public List<Parcipitant> Parcipitants { get; set; }
+
+        public void RegisterParticipant(Member currentMember)
+        {
+            Parcipitant newParcipitant = new Parcipitant(currentMember.Name);
+
+            Parcipitants.Add(newParcipitant);
+            currentMember.AddedToCup(this);
+        }
+
         /*
          * METODER:
          *      (Strategy) 

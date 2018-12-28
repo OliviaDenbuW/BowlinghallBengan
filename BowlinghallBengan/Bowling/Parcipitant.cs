@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace BowlinghallBengan.Bowling
 {
-    class Person
+    class Parcipitant : Person
     {
-        public string Name { get; set; }
+        public int Id { get; set; }
 
-        public Person(string name)
+        public Parcipitant(/*int id,*/ string name) : base(name)
         {
-            Name = name;
+            //Id = id;
         }
     }
 }

@@ -6,12 +6,8 @@ using System.Threading.Tasks;
 
 namespace BowlinghallBengan.Bowling
 {
-    enum FeeType
+    class CupFactory
     {
-        //Lägger bara in alla olika typer av feeTypes det finns
-        StartFee,
-        MemberFee,
-        CupFee,
-        GameFee
+        
     }
 }

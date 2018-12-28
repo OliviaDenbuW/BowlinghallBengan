@@ -8,12 +8,13 @@ namespace BowlinghallBengan.Bowling
 {
     class Visitor : Person
     {
+        public string StreetAddress { get; set; }
         public bool WantsMembership { get; set; }
         public bool HasPayedStartFee { get; set; }
 
-        public Visitor(string name, string streetAddress) : base(name, streetAddress)
+        public Visitor(string name, string streetAddress) : base(name)
         {
-
+            StreetAddress = streetAddress;
         }
 
         public Member BecomeMember(Visitor currentVisitor)
@@ -31,7 +32,7 @@ namespace BowlinghallBengan.Bowling
             {
                 newMember.MakeTransaction(FeeType.StartFee);
                 hasPayedStartFee = true;
-                Console.WriteLine("Startavgiften har betalats!");
+                Console.WriteLine("Tack " + name + " för din betalning av startavgiften!");
             }
 
             return newMember;

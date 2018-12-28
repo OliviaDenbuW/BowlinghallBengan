@@ -8,29 +8,35 @@ namespace BowlinghallBengan.Bowling
 {
     class Member : Person
     {
+        public int Id { get; set; }
+        public string StreetAddress { get; set; }
         public Membership Membership { get; set; }
         public bool HasPaidMembership { get; set; }
         public List<Transaction> Transactions { get; set; }
-        public List<Competition> AttendedCompetitions { get; set; }
+        public List<Cup> AttendedCups { get; set; }
 
-        public Member(string name, string streetAddress, Membership newMembership) : base(name, streetAddress)
+        public Member(/*int id,*/ string name, string streetAddress, Membership newMembership) : base(name)
         {
+            //Id = id;
+            StreetAddress = streetAddress;
             Membership = newMembership;
             Transactions = new List<Transaction>();
-            AttendedCompetitions = new List<Competition>();
+            AttendedCups = new List<Cup>();
         }
 
         public Transaction MakeTransaction(FeeType currentType)
         {
-            Transaction transaction = new Transaction()
+            Transaction currentTransaction = new Transaction()
             {
                 TimeStamp = DateTime.Now,
-                TypeOfFee = FeeType.MemberFee,
+                FeeType = FeeType.MemberFee,
                 Amount = CurrentFeeList.Instance.GetPriceForFeeType(FeeType.MemberFee),
                 IsPayed = true
             };
 
-            return transaction;
+            Transactions.Add(currentTransaction);
+
+            return currentTransaction;
         }
 
         public void AddMembership()
@@ -40,6 +46,15 @@ namespace BowlinghallBengan.Bowling
             //currentTransaction.
         }
 
+        public void AddedToCup(Cup currentCup)
+        {
+            Transaction currentTransaction = MakeTransaction(FeeType.CupFee);
+            Console.WriteLine("Konfirmation av betaldcupavgift");
+            AttendedCups.Add(currentCup);
+            Console.WriteLine("Du kommer delta i " + currentCup.Name);
+        }
+
+        
         //Ev IsMember
 
         /*
