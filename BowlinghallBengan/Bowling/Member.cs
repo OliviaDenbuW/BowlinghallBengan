@@ -46,12 +46,12 @@ namespace BowlinghallBengan.Bowling
             //currentTransaction.
         }
 
-        public void AddedToCup(Cup currentCup)
+        public void ParticipateInCup(Cup currentCup)
         {
             Transaction currentTransaction = MakeTransaction(FeeType.CupFee);
-            Console.WriteLine("Konfirmation av betaldcupavgift");
+            Console.WriteLine("Konfirmation av betaldcupavgift för " + this.Name);
+
             AttendedCups.Add(currentCup);
-            Console.WriteLine("Du kommer delta i " + currentCup.Name);
         }
 
         

@@ -8,23 +8,28 @@ namespace BowlinghallBengan.Bowling
 {
     class Cup
     {
-        public Cup(string name, DateTime startDate, DateTime endDate)
-        {
-            PlayedGames = new List<Game>();
-            Parcipitants = new List<Parcipitant>();
-        }
         public string Name { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
         public List<Game> PlayedGames { get; set; }
         public List<Parcipitant> Parcipitants { get; set; }
 
-        public void RegisterParticipant(Member currentMember)
+        public Cup(string name, DateTime startDate, DateTime endDate)
+        {
+            Name = name;
+            PlayedGames = new List<Game>();
+            Parcipitants = new List<Parcipitant>();
+        }
+
+        public void RegisterNewParticipant(Member currentMember)
         {
             Parcipitant newParcipitant = new Parcipitant(currentMember.Name);
 
+            currentMember.ParticipateInCup(this);
             Parcipitants.Add(newParcipitant);
-            currentMember.AddedToCup(this);
+
+            string confirmation = "Du är nu anmäld till " + Name;
+            Console.WriteLine(confirmation);
         }
 
         /*
