@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BowlinghallBengan.Bowling
 {
-    class Logger
+    public class Logger
     {
         public string PrintMessage(string message)
         {

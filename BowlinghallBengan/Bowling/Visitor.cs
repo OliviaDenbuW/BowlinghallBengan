@@ -35,7 +35,18 @@ namespace BowlinghallBengan.Bowling
                 Console.WriteLine("Tack " + name + " för din betalning av startavgiften!");
             }
 
+            AddNewMemberToMemberList(newMember);
+
             return newMember;
+        }
+
+        public void AddNewMemberToMemberList(Member newMember)
+        {
+            BowlingAlley bowlingAlley = BowlingAlley.Instance;
+            bowlingAlley.AllMembers.Add(newMember);
+
+            string confirmation = newMember.Name + " är nu tillagd i medlemslistan";
+            Console.WriteLine(confirmation);
         }
     }
 }

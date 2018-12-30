@@ -16,6 +16,12 @@ namespace BowlinghallBengan.Bowling
         public Cup CreateCup(string name, DateTime startDate, DateTime endDate)
         {
             Cup currentCup = new Cup(name, startDate, endDate);
+            Console.WriteLine("********************");
+            Console.WriteLine("Annonsering av " + name);
+            Console.WriteLine("Startdatum av cup: " + startDate);
+            Console.WriteLine("Slutdatum av cup: " + endDate);
+            Console.WriteLine("Anmälningen är nu öppen");
+            Console.WriteLine("********************");
 
             return currentCup;
         }

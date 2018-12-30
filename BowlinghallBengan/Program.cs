@@ -25,8 +25,18 @@ namespace BowlinghallBengan
             Admin admin = new Admin("Bengan");
             Cup testCup = admin.CreateCup("TestCup", DateTime.Now, DateTime.Now.AddDays(7));
 
-            Member testMember = new Member("Olvia", "addess", new Membership(2, DateTime.Now));
-            testCup.RegisterParticipant(testMember);
+            for (int i = 0; i < 11; i++)
+            {
+                Member testMember = new Member("Olvia", "addess", new Membership(2, DateTime.Now));
+                testCup.RegisterParticipant(testMember);
+            }
+
+            var bowlingAlley = BowlingAlley.Instance;
+            for (int i = 0; i < bowlingAlley.AllMembers.Count; i++)
+            {
+                string name = bowlingAlley.AllMembers[i].Name;
+                Console.WriteLine(name);
+            }
 
             Console.ReadLine();
         }

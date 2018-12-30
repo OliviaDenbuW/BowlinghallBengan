@@ -10,12 +10,13 @@ namespace BowlinghallBengan.Bowling
     class BowlingAlley
     {
         private static BowlingAlley _instance = null;
-
-        private string Name { get; set; }
+        public string Name { get; set; }
+        public List<Member> AllMembers { get; set; }
 
         private BowlingAlley()
         {
             Name = "Bengans Bowlinghall";
+            AllMembers = new List<Member>();
         }
 
         public static BowlingAlley Instance
